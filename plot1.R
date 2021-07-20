@@ -8,6 +8,8 @@ data_new <- sqldf("SELECT *
                    FROM df 
                    WHERE df.Date= '1/2/2007' OR 
                          df.Date= '2/2/2007'")
+#setup layout 1,1
+par(mfcol=c(1,1))
 
 #buid hist
 hist(as.numeric(data_new$Global_active_power), 

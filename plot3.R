@@ -16,6 +16,9 @@ data_new$Date <- as.Date(data_new$Date, format("%d/%m/%Y"))
 data_new$Time <- strptime(data_new$Time)
 data_new$Global_active_power <- as.numeric(data_new$Global_active_power)
 
+#setup layout 1,1
+par(mfcol=c(1,1))
+
 #prepare data to plot, adding date_time column to fill x axis values
 data_new <- mutate(data_new, date_time = as_datetime(paste(data_new$Date, data_new$Time, sep = " ")) )
 
